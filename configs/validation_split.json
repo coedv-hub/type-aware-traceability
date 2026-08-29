@@ -1,0 +1,418 @@
+{
+  "version": 1,
+  "status": "frozen",
+  "random_seed": 42,
+  "sampling": {
+    "method": "stratified_by_dataset_and_requirement_type",
+    "validation_fraction": 0.2,
+    "max_per_type_per_dataset": 3
+  },
+  "datasets": {
+    "eTour": {
+      "validation_requirement_ids": [
+        "UC10",
+        "UC16",
+        "UC2-2",
+        "UC4-2",
+        "UC47",
+        "UC9"
+      ],
+      "test_requirement_ids": [
+        "UC1-1",
+        "UC1-2",
+        "UC11",
+        "UC12",
+        "UC13",
+        "UC14",
+        "UC15",
+        "UC17",
+        "UC18",
+        "UC19",
+        "UC2-1",
+        "UC20",
+        "UC21",
+        "UC22",
+        "UC23",
+        "UC24",
+        "UC25",
+        "UC26",
+        "UC27-1",
+        "UC27-2",
+        "UC28",
+        "UC29",
+        "UC3-1",
+        "UC3-2",
+        "UC30",
+        "UC31",
+        "UC32",
+        "UC33",
+        "UC34",
+        "UC35",
+        "UC36",
+        "UC38",
+        "UC39",
+        "UC4-1",
+        "UC40",
+        "UC41",
+        "UC42",
+        "UC43",
+        "UC44",
+        "UC45",
+        "UC46",
+        "UC48",
+        "UC49",
+        "UC5",
+        "UC50",
+        "UC51",
+        "UC52",
+        "UC53",
+        "UC54",
+        "UC55",
+        "UC56-1",
+        "UC56-2",
+        "UC57-1",
+        "UC57-2",
+        "UC58",
+        "UC6",
+        "UC7",
+        "UC8-1",
+        "UC8-2"
+      ],
+      "validation_by_type": {
+        "FR": [
+          "UC10",
+          "UC16",
+          "UC47"
+        ],
+        "NFR": [
+          "UC2-2",
+          "UC4-2"
+        ],
+        "Mixed": [
+          "UC9"
+        ]
+      },
+      "counts": {
+        "evaluation": 65,
+        "validation": 6,
+        "test": 59,
+        "validation_types": {
+          "FR": 3,
+          "NFR": 2,
+          "Mixed": 1
+        },
+        "test_types": {
+          "FR": 53,
+          "NFR": 6
+        }
+      }
+    },
+    "eANCI": {
+      "validation_requirement_ids": [
+        "EA13",
+        "EA138",
+        "EA16",
+        "EA17",
+        "EA3",
+        "EA4"
+      ],
+      "test_requirement_ids": [
+        "EA1",
+        "EA10",
+        "EA11",
+        "EA12",
+        "EA14",
+        "EA15",
+        "EA18",
+        "EA19",
+        "EA2",
+        "EA20",
+        "EA21",
+        "EA22",
+        "EA23",
+        "EA24",
+        "EA25",
+        "EA26",
+        "EA27",
+        "EA28",
+        "EA29",
+        "EA30",
+        "EA31",
+        "EA32",
+        "EA33",
+        "EA34",
+        "EA36",
+        "EA37",
+        "EA38",
+        "EA41",
+        "EA5",
+        "EA6",
+        "EA7",
+        "EA8",
+        "EA9"
+      ],
+      "validation_by_type": {
+        "FR": [
+          "EA13",
+          "EA138",
+          "EA4"
+        ],
+        "NFR": [],
+        "Mixed": [
+          "EA16",
+          "EA17",
+          "EA3"
+        ]
+      },
+      "counts": {
+        "evaluation": 39,
+        "validation": 6,
+        "test": 33,
+        "validation_types": {
+          "FR": 3,
+          "Mixed": 3
+        },
+        "test_types": {
+          "Mixed": 15,
+          "FR": 18
+        }
+      }
+    },
+    "iTrust": {
+      "validation_requirement_ids": [
+        "UC10S1",
+        "UC11E1",
+        "UC16",
+        "UC25",
+        "UC34E3",
+        "UC3E2",
+        "UC3S3"
+      ],
+      "test_requirement_ids": [
+        "UC10E1",
+        "UC10E2",
+        "UC10S2",
+        "UC11E2",
+        "UC11S1",
+        "UC11S2",
+        "UC12",
+        "UC13",
+        "UC13E1",
+        "UC15E1",
+        "UC15S1",
+        "UC15S2",
+        "UC15S3",
+        "UC15S4",
+        "UC18E1",
+        "UC18E2",
+        "UC18S1",
+        "UC18S2",
+        "UC19E1",
+        "UC19E2",
+        "UC19S1",
+        "UC19S2",
+        "UC1E1",
+        "UC1S1",
+        "UC21E1",
+        "UC21E2",
+        "UC21S1",
+        "UC23E1",
+        "UC23E2",
+        "UC23S1",
+        "UC23S3",
+        "UC23S4",
+        "UC24",
+        "UC26E1",
+        "UC26E2",
+        "UC26S1",
+        "UC26S2",
+        "UC26S3",
+        "UC26S4",
+        "UC27S1",
+        "UC27S2",
+        "UC28",
+        "UC29",
+        "UC2E2",
+        "UC2S1",
+        "UC2S2",
+        "UC30E1",
+        "UC30E2",
+        "UC30S1",
+        "UC30S2",
+        "UC30S3",
+        "UC30S4",
+        "UC30S5",
+        "UC31S1",
+        "UC32S2",
+        "UC33S1",
+        "UC33S2",
+        "UC34E1",
+        "UC34E2",
+        "UC34E4",
+        "UC34S1",
+        "UC34S2",
+        "UC34S3",
+        "UC34S4",
+        "UC34S5",
+        "UC34S6",
+        "UC35S1",
+        "UC35S2",
+        "UC36S1",
+        "UC36S2",
+        "UC36S3",
+        "UC37S1",
+        "UC37S2",
+        "UC37S3",
+        "UC38S1",
+        "UC38S2",
+        "UC3E1",
+        "UC3S1",
+        "UC3S2",
+        "UC3S4",
+        "UC3S5",
+        "UC4E1",
+        "UC4E2",
+        "UC4S1",
+        "UC4S2",
+        "UC4S3",
+        "UC4S4",
+        "UC5S1",
+        "UC5S2",
+        "UC6S1",
+        "UC6S2",
+        "UC6S3",
+        "UC8S1",
+        "UC8S2",
+        "UC9S1",
+        "UC9S2"
+      ],
+      "validation_by_type": {
+        "FR": [
+          "UC11E1",
+          "UC16",
+          "UC25"
+        ],
+        "NFR": [
+          "UC3S3"
+        ],
+        "Mixed": [
+          "UC10S1",
+          "UC34E3",
+          "UC3E2"
+        ]
+      },
+      "counts": {
+        "evaluation": 103,
+        "validation": 7,
+        "test": 96,
+        "validation_types": {
+          "Mixed": 3,
+          "FR": 3,
+          "NFR": 1
+        },
+        "test_types": {
+          "FR": 71,
+          "Mixed": 25
+        }
+      }
+    },
+    "LibEST": {
+      "validation_requirement_ids": [
+        "RQ16",
+        "RQ25-2",
+        "RQ33-1",
+        "RQ35-2",
+        "RQ36-2",
+        "RQ6-1",
+        "RQ7-1"
+      ],
+      "test_requirement_ids": [
+        "RQ11",
+        "RQ13-1",
+        "RQ13-2",
+        "RQ14",
+        "RQ15",
+        "RQ17",
+        "RQ18-1",
+        "RQ18-2",
+        "RQ19",
+        "RQ20-1",
+        "RQ20-2",
+        "RQ21",
+        "RQ22",
+        "RQ23",
+        "RQ24",
+        "RQ25-1",
+        "RQ26",
+        "RQ27",
+        "RQ28",
+        "RQ29",
+        "RQ31",
+        "RQ32-1",
+        "RQ32-2",
+        "RQ33-2",
+        "RQ34",
+        "RQ35-1",
+        "RQ36-1",
+        "RQ37",
+        "RQ38",
+        "RQ39",
+        "RQ4-1",
+        "RQ4-2",
+        "RQ40",
+        "RQ41",
+        "RQ42-1",
+        "RQ42-2",
+        "RQ45",
+        "RQ46-1",
+        "RQ46-2",
+        "RQ47",
+        "RQ48",
+        "RQ49",
+        "RQ5-1",
+        "RQ5-2",
+        "RQ50",
+        "RQ51",
+        "RQ55",
+        "RQ56",
+        "RQ57",
+        "RQ58",
+        "RQ6-2",
+        "RQ7-2",
+        "RQ8-1",
+        "RQ8-2",
+        "RQ9-1",
+        "RQ9-2"
+      ],
+      "validation_by_type": {
+        "FR": [
+          "RQ33-1",
+          "RQ6-1",
+          "RQ7-1"
+        ],
+        "NFR": [
+          "RQ25-2",
+          "RQ35-2",
+          "RQ36-2"
+        ],
+        "Mixed": [
+          "RQ16"
+        ]
+      },
+      "counts": {
+        "evaluation": 63,
+        "validation": 7,
+        "test": 56,
+        "validation_types": {
+          "Mixed": 1,
+          "NFR": 3,
+          "FR": 3
+        },
+        "test_types": {
+          "FR": 35,
+          "NFR": 21
+        }
+      }
+    }
+  }
+}

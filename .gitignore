@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+.venv/
+.cache/
+.pytest_cache/
+.DS_Store
+
+# Local datasets and generated experiment artifacts
+/Data/
+/results/
+/tables/
+/figures/
+
+# Local credentials and environment files
+.env
+.env.*
+!.env.example

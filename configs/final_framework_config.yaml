@@ -1,0 +1,27 @@
+# Final, frozen configuration for the proposed framework's formal runs.
+validation:
+  split_file: configs/validation_split.json
+  random_seed: 42
+  status: frozen
+
+retrieval:
+  retriever: hybrid3
+  candidate_pool_k: 50
+  dcar_selected_k: 10
+  dcar_selection_strategy: rank_fallback
+
+scoring:
+  selected_variant: B
+  selected_variant_name: alignment_primary_weighted_sum
+  variants_compared:
+    A: current_multiplicative_calibration
+    B: alignment_primary_weighted_sum
+    C: verification_gated_calibration
+  mixed_fusion:
+    functional_weight: 0.5
+    quality_weight: 0.5
+  threshold: 0.20
+
+evaluation:
+  main_binary_protocol: top_k
+  binary_top_k: 10

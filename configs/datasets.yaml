@@ -1,0 +1,127 @@
+project:
+  data_root: Data
+
+datasets:
+  eTour:
+    path: eTour
+    scope: Public
+    requirement_dirs: [req, requirements]
+    code_dirs: [code, source_code]
+  eANCI:
+    path: eANCI
+    scope: Public
+    requirement_dirs: [req, requirements]
+    code_dirs: [code, source_code]
+  iTrust:
+    path: iTrust
+    scope: Public
+    requirement_dirs: [req, requirements]
+    code_dirs: [code, source_code]
+  LibEST:
+    path: LibEST
+    scope: Public
+    requirement_dirs: [requirements, req]
+    code_dirs: [code, source_code]
+  # Industrial is NOT registered as a loadable dataset in this public
+  # release. Its requirement texts and source code are covered by a
+  # confidentiality agreement and are not distributed. This code-only
+  # release retains its anonymized candidate-pair manifest under
+  # configs/pair_classification_manifests/, not its raw dataset.
+  # The pipeline below runs on the four public datasets once their data
+  # have been supplied locally. Results reported for Industrial in
+  # the paper were produced with the same code and the full (non-public)
+  # dataset.
+  #
+  # Industrial:
+  #   path: Industrial
+  #   scope: Anonymized
+  #   requirement_dirs: [requirements, req]
+  #   code_dirs: [code, source_code]
+
+files:
+  requirements: requirements.csv
+  trace_links: trace_links.csv
+
+code_extensions:
+  - .java
+  - .c
+  - .h
+  - .sol
+  - .py
+  - .xml
+  - .properties
+  - .txt
+  - .js
+  - .ts
+  - .go
+  - .rs
+
+evaluation:
+  binary_protocol: top_k
+  binary_top_k: 10
+  ranking_cutoffs: [5, 10]
+
+ir:
+  tfidf:
+    max_features: 10000
+    ngram_range: [1, 2]
+    min_df: 1
+    max_df: 1.0
+  bm25:
+    k1: 1.5
+    b: 0.75
+  lsi:
+    num_topics: 100
+    max_features: 10000
+    ngram_range: [1, 2]
+
+neural:
+  cache_dir: .cache/neural_embeddings
+  sentencebert:
+    model_name: sentence-transformers/all-MiniLM-L6-v2
+    revision: 1110a243fdf4706b3f48f1d95db1a4f5529b4d41
+    batch_size: 32
+    max_length: 256
+  codebert:
+    model_name: microsoft/codebert-base
+    revision: 3b0952feddeffad0063f274080e3c23d75e7eb39
+    batch_size: 16
+    max_length: 512
+
+llm:
+  # Stage 4a safety limit: a live run cannot exceed this many requirements.
+  max_live_sample_size: 5
+  default_sample_size: 5
+  random_seed: 42
+  max_completion_tokens: 300
+  token_estimation_chars_per_token: 3.5
+  providers:
+    openai:
+      api_key_env: OPENAI_API_KEY
+      base_url: https://api.openai.com/v1
+      default_model: gpt-4.1
+    deepseek:
+      api_key_env: DEEPSEEK_API_KEY
+      base_url: https://api.deepseek.com
+      default_model: deepseek-v4-flash
+  # USD per one million tokens. Update this table when provider prices change.
+  # Values last reviewed on 2026-06-30; estimates use cache-miss input prices.
+  pricing:
+    gpt-4.1:
+      input_per_million_usd: 2.0
+      output_per_million_usd: 8.0
+    deepseek-v4-flash:
+      input_per_million_usd: 0.14
+      output_per_million_usd: 0.28
+    deepseek-v4-pro:
+      input_per_million_usd: 0.435
+      output_per_million_usd: 0.87
+
+output:
+  results_dir: results/ir_baselines
+  neural_results_dir: results/neural_baselines
+  llm_results_dir: results/llm_baselines
+  llm_cache_dir: results/llm_cache
+  token_statistics_dir: results/token_statistics
+  tables_dir: tables
+  figures_dir: figures
